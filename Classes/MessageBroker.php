@@ -1,6 +1,8 @@
 <?php
 
-require_once('/home/mdruta/var/www/MessageBrokerTest/Class/Server.php');
+define('DIR_APP', dirname(__DIR__));
+
+require_once(DIR_APP . '/Classes/Server.php');
 
 class MessageBroker
 {
