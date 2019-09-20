@@ -1,17 +1,12 @@
 <?php
 
-define('DIR_APP', dirname(__DIR__));
-
 require_once(DIR_APP . '/Classes/Server.php');
 
 class MessageBroker
 {
     private static $instance;
 
-    private function __construct()
-    {
-        //The constructor is made private to disable intantiation
-    }
+    private function __construct() {}
 
     public static function getInstance()
     {
@@ -27,8 +22,6 @@ class MessageBroker
      */
     final public function __clone()
     {
-        //We cannot create a clone of our MessageBroker instance as it should be the only one
-        //We made this function final so that it can't be overridden
         throw new Exception('Feature disabled!');
     }
 
@@ -37,8 +30,6 @@ class MessageBroker
      */
     final public function __wakeup()
     {
-        //Avoid multiple different deserialization which leads to multiple instances of MessageBroker
-        //We made this function final so that it can't be overridden
         throw new Exception('Feature disabled!');
     }
 }
